@@ -9,8 +9,8 @@ env:
   NODE_VERSION: '10.x'
 
 jobs:
-  build-and-deploy:
-    name: Build and Test
+  install:
+    name: Install
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -18,8 +18,22 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
-    - name: npm install, build, and test
+    - name: npm install
       run: |
         npm install
-        npm run build
-        npm run test
+
+  test:
+    name: Run
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        script: [lint, markdownlint]
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: npm scripts
+      run: |
+        npm run ${{ matrix.script }}
