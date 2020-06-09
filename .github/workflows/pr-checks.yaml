@@ -1,0 +1,26 @@
+name: Lint Check
+
+on:
+ pull_request:
+  branch: master
+  types: [created, edited]
+
+env:
+  NODE_VERSION: '10.x'
+
+jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install
+        run: |
+          npm install
+      - name: Lint
+        run: |
+          npm run lint
