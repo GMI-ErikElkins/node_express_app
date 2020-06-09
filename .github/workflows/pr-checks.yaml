@@ -4,8 +4,6 @@ on:
  pull_request:
   branches: [master]
   types: [created, edited]
-  paths:
-    - '**/**.js'
 
 env:
   NODE_VERSION: '10.x'
