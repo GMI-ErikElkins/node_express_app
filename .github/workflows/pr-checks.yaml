@@ -6,7 +6,6 @@ on:
   types: [opened, edited, reopened]
   paths:	
     - '**/**.js'
-    - '**.js'
   
 env:
   NODE_VERSION: '10.x'
