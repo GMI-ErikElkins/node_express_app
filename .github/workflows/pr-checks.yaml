@@ -2,7 +2,6 @@ name: Lint Check
 
 on:
  pull_request:
-  branches: [master]
   types: [created, edited]
 
 env:
