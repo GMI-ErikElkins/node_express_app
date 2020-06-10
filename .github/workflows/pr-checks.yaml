@@ -1,11 +1,7 @@
 name: Lint Check
 
 on:
- pull_request:
-  branches: [master]	
-  types: [opened, synchronize, reopened]
-  paths:	
-    - '**/**.js'
+ pull_request
   
 env:
   NODE_VERSION: '10.x'
