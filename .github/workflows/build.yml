@@ -1,9 +1,7 @@
-name: Build & Test
+name: CI
 
 on:
-  push:
-    branches:
-      - master
+  push
 
 env:
   NODE_VERSION: '10.x'
@@ -18,6 +16,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm 
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-:  
     - name: npm install
       run: |
         npm install
