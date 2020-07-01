@@ -20,7 +20,7 @@
     "markdownlint-cli": "^0.23.1",
     "morgan": "^1.9.1",
     "natives": "^1.1.6",
-    "pug": "^2.0.0-beta6",
+    "pug": "^3.0.0",
     "serve-favicon": "^2.3.0"
   },
   "engines": {
