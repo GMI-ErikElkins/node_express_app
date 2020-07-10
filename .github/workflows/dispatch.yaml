@@ -21,5 +21,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: GeneralMillsPoc/node_express_app/node-app
+          repository: generalmillspoc/node_express_app/node-app
           tag_with_ref: true
