@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://npm.pkg.github.com'
+        scope: "@generalmillspoc"
     - name: Cache Node.js Modules
       uses: actions/cache@v2
       with:
@@ -20,11 +24,6 @@ jobs:
           ${{ runner.OS }}-:  
     - run: npm ci
     - run: npm run lint
-      # Setup .npmrc file to publish to GitHub Packages
-    - uses: actions/setup-node@v1
-      with:
-        registry-url: 'https://npm.pkg.github.com'
-        scope: "@generalmillspoc"
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
