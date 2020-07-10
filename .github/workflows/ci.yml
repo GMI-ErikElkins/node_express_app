@@ -6,12 +6,12 @@ on:
     
 jobs:
   build:
-    container: node:12
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v1
       with:
+        node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
         scope: "@generalmillspoc"
     - name: Cache Node.js Modules
