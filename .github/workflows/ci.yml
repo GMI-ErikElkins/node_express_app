@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         registry-url: 'https://npm.pkg.github.com'
-        scope: "GeneralMillsPoc/node_express_app"
+        scope: "@generalmillspoc"
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
