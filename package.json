@@ -1,7 +1,6 @@
 {
   "name": "nodejs-webapp-express",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "start": "node app",
     "lint": "eslint routes/index.js",
