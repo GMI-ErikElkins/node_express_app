@@ -5,4 +5,3 @@ COPY package*.json ./
 RUN npm ci
 
 FROM nginxinc/nginx-unprivileged:1.16.0-alpine
-
