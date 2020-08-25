@@ -4,5 +4,5 @@ WORKDIR /app/website
 COPY package*.json ./
 RUN npm ci
 
-FROM nginxinc/nginx-unprivileged:1.16.0-alpine
+FROM nginxinc/nginx-unprivileged:1.19.2-alpine
  
